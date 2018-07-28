@@ -4,7 +4,7 @@ from Crypto import Random
 from Crypto.Hash import MD5
 import base64
 
-class ersa:
+class rsa:
 	def rsakeys():
 		length=1024
 		privatekey = RSA.generate(length, Random.new().read)
