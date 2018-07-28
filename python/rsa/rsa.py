@@ -25,5 +25,10 @@ class ersa:
 		f=open(public_file,"w")
 		f.write((publickey.exportKey('PEM')).decode())
 		f.close()
-	def import(publickey,privatekey):
-		
+	def import(publickey_file,privatekey_file):
+		f=open(private_file,"r")
+		privatekey=RSA.importKey(f.read())
+		f.close()
+		f=open(public_file,"r")
+		publickey=RSA.importKey(f.read())
+		f.close()
