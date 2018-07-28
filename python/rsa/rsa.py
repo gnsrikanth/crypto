@@ -32,3 +32,4 @@ class ersa:
 		f=open(publickey_file,"r")
 		publickey=RSA.importKey(f.read())
 		f.close()
+		return privatekey,publickey
