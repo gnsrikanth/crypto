@@ -1,7 +1,7 @@
 import Crypto
 from Crypto.PublicKey import RSA
 from Crypto import Random
-from Crypto.Hash import MD5
+from Crypto.Hash import SHA256 as hash
 import base64
 
 class rsa:
@@ -33,3 +33,7 @@ class rsa:
 		publickey=RSA.importKey(f.read())
 		f.close()
 		return privatekey,publickey
+	def sign(privatekey,data):
+		datahash=hash.new(data.encode()).digest()
+		return privatekey.sign(datahash,'')
+	def verify()
