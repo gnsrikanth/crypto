@@ -18,14 +18,14 @@ class ersa:
 		decoded_ciphertext = base64.b64decode(b64cipher)
 		plaintext = rsa_privatekey.decrypt(decoded_ciphertext)
 		return plaintext
-	def export(publickey,privatekey,private_file,public_file):
+	def exportkeys(publickey,privatekey,private_file,public_file):
 		f=open(private_file,"w")
 		f.write((privatekey.exportKey('PEM')).decode())
 		f.close()
 		f=open(public_file,"w")
 		f.write((publickey.exportKey('PEM')).decode())
 		f.close()
-	def import(publickey_file,privatekey_file):
+	def getkeys(publickey_file,privatekey_file):
 		f=open(private_file,"r")
 		privatekey=RSA.importKey(f.read())
 		f.close()
