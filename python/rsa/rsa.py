@@ -19,6 +19,11 @@ class ersa:
 		plaintext = rsa_privatekey.decrypt(decoded_ciphertext)
 		return plaintext
 	def export(publickey,privatekey,private_file,public_file):
-		f=open(private_file)		
+		f=open(private_file,"w")
+		f.write((privatekey.exportKey('PEM')).decode())
+		f.close()
+		f=open(public_file,"w")
+		f.write((publickey.exportKey('PEM')).decode())
+		f.close()
 	def import(publickey,privatekey):
 		
