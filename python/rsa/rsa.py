@@ -14,3 +14,7 @@ class ersa:
 		cipher_text=rsa_publickey.encrypt(plain_text,32)[0]
 		b64cipher=base64.b64encode(cipher_text)
 		return b64cipher
+	def decrypt(b64cipher, rsa_privatekey):
+		decoded_ciphertext = base64.b64decode(b64cipher)
+		plaintext = privatekey.decrypt(decoded_ciphertext)
+		return plaintext
