@@ -18,11 +18,7 @@ class ersa:
 		decoded_ciphertext = base64.b64decode(b64cipher)
 		plaintext = rsa_privatekey.decrypt(decoded_ciphertext)
 		return plaintext
-	def export(publickey,privatekey):
-		f=open("public","wb")
-		f.write((publickey).exportKey())
-		f.close()
-		f=open("private","wb")
-		f.write((privatekey).exportKey())
-		f.close()
-	
+	def export(publickey,privatekey,private_file,public_file):
+		f=open(private_file)		
+	def import(publickey,privatekey):
+		
