@@ -6,6 +6,7 @@ filename=sys.argv[1]
 option=sys.argv[2]
 
 def encryptdata():
+    pswd = getpass.getpass('Password:')
     f=open(filename,"rb")
     pt=f.read()
     f.close()
@@ -15,6 +16,7 @@ def encryptdata():
     f.close()
     print("[+]Done")
 def decryptdata():
+    pswd = getpass.getpass('Password:')
     f=open(filename,"rb")
     ct=f.read()
     f.close()
@@ -24,7 +26,6 @@ def decryptdata():
     f.close()
     print("[+]Done")
 if os.path.exists(filename) == True:
-    pswd = getpass.getpass('Password:')
     if option=="encrypt":
         try:
             encryptdata()
