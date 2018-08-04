@@ -12,6 +12,7 @@ if option=="encrypt":
     f=open(filename,"wb")
     f.write(ct)
     f.close()
+    print("[+]Done")
 elif option=="decrypt":
     f=open(filename,"rb")
     ct=f.read()
@@ -20,5 +21,6 @@ elif option=="decrypt":
     f=open(filename,"wb")
     f.write(pt)
     f.close()
+    print("[+]Done")
 else:
     print("[-]Wrong Options\n[+]Usage: python simplecrypt.py filename encrypt/decrypt")
