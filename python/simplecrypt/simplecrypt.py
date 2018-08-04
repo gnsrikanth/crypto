@@ -1,10 +1,12 @@
 import sys
 from simplecrypt import encrypt,decrypt
 import getpass
+import os
 filename=sys.argv[1]
 option=sys.argv[2]
 pswd = getpass.getpass('Password:')
-if option=="encrypt":
+
+def encryptdata():
     f=open(filename,"rb")
     pt=f.read()
     f.close()
@@ -13,7 +15,7 @@ if option=="encrypt":
     f.write(ct)
     f.close()
     print("[+]Done")
-elif option=="decrypt":
+def decryptdata():
     f=open(filename,"rb")
     ct=f.read()
     f.close()
@@ -22,5 +24,10 @@ elif option=="decrypt":
     f.write(pt)
     f.close()
     print("[+]Done")
+if os.isfile()
+if option=="encrypt":
+    encryptdata()
+elif option=="decrypt":
+    decryptdata()
 else:
     print("[-]Wrong Options\n[+]Usage: python simplecrypt.py filename encrypt/decrypt")
