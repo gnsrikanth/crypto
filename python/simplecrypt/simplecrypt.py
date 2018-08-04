@@ -4,7 +4,6 @@ import getpass
 import os
 filename=sys.argv[1]
 option=sys.argv[2]
-pswd = getpass.getpass('Password:')
 
 def encryptdata():
     f=open(filename,"rb")
@@ -25,6 +24,7 @@ def decryptdata():
     f.close()
     print("[+]Done")
 if os.path.exists(filename) == True:
+    pswd = getpass.getpass('Password:')
     if option=="encrypt":
         try:
             encryptdata()
