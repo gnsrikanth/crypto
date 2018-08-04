@@ -24,10 +24,18 @@ def decryptdata():
     f.write(pt)
     f.close()
     print("[+]Done")
-if os.isfile()
-if option=="encrypt":
-    encryptdata()
-elif option=="decrypt":
-    decryptdata()
+if os.path.exists(filename) == True:
+    if option=="encrypt":
+        try:
+            encryptdata()
+        except:
+            print("[-]Cannot encrypt data error"+e)
+    elif option=="decrypt":
+        try:
+            decryptdata()
+        except:
+            print("[+]Cannot decrypt, Wrong file or password")
+    else:
+        print("[-]Wrong Options\n[+]Usage: python simplecrypt.py filename encrypt/decrypt")
 else:
-    print("[-]Wrong Options\n[+]Usage: python simplecrypt.py filename encrypt/decrypt")
+    print("[-]file not found")
